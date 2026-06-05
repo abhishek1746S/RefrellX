@@ -1,6 +1,6 @@
 import React from "react";
 
-const ShowStudent = ({ close }) => {
+const StudentRegistration = ({ close }) => {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
       <div className="relative bg-white p-6 rounded-xl w-[500px] max-h-[90vh] overflow-y-auto shadow-xl">
@@ -114,4 +114,4 @@ const ShowStudent = ({ close }) => {
   );
 };
 
-export default ShowStudent;
+export default StudentRegistration;

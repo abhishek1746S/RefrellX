@@ -1,12 +1,12 @@
 import React from "react";
 import "../Home/Home.css";
 import { useState } from "react";
-import ShowStudent from "../Login&Registration/StudentRegistration.jsx";
+import StudentRegistration from "../Login&Registration/StudentRegistration.jsx";
 import EmployeeRegistration from "../Login&Registration/EmployeeRegistration.jsx";
 import AdminLogin from "../Login&Registration/AdminLogin.jsx";
 import LoginPage from "../Login&Registration/LoginPage.jsx";
 const Home = () => {
-  const [showLogin, setShowLogin] = useState(false);
+  const [Login, setLogin] = useState(false);
   const [showStudent, setShowStudent] = useState(false);
   const [showEmployee, setShowEmployee] = useState(false);
   const [showAdmin, setShowAdmin] = useState(false);
@@ -74,28 +74,30 @@ const Home = () => {
           href="#"
           onClick={(e) => {
             e.preventDefault();
-            setShowLogin(true);
+            setLogin(true);
           }}>
           Login
         </a>{" "}
       </p>
 
-      {showStudent && <ShowStudent close={() => setShowStudent(false)} />}
+      {showStudent && (
+        <StudentRegistration close={() => setShowStudent(false)} />
+      )}
 
       {showEmployee && (
         <EmployeeRegistration setShowEmployee={setShowEmployee} />
       )}
 
       {showAdmin && <AdminLogin setShowAdmin={setShowAdmin} />}
-      {showLogin && (
-        <LoginPage
-          setShowLogin={setShowLogin}
-          setShowRegister={setShowRegister}
-          showRegister={showRegister}
-          setShowStudent={setShowStudent}
-          setShowEmployee={setShowEmployee}
-        />
-      )}
+      {(Login || showRegister) && (
+  <LoginPage
+    setLogin={setLogin}
+    setShowRegister={setShowRegister}
+    showRegister={showRegister}
+    setShowStudent={setShowStudent}
+    setShowEmployee={setShowEmployee}
+  />
+)}
     </div>
   );
 };
