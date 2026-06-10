@@ -1,6 +1,7 @@
 import React from "react";
-
-const AdminLogin = ({ setShowAdmin }) => {
+import { useNavigate } from "react-router-dom";
+const AdminLogin = () => {
+  const navigate=useNavigate();
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
       <div className="relative bg-white p-6 rounded-xl w-[400px] shadow-xl">
@@ -8,7 +9,7 @@ const AdminLogin = ({ setShowAdmin }) => {
         <button
           type="button"
           className="absolute top-3 right-4 text-2xl font-bold text-gray-500 hover:text-red-500"
-          onClick={() => setShowAdmin(false)}>
+          onClick={() => navigate("/")}>
           ×
         </button>
 
@@ -46,7 +47,7 @@ const AdminLogin = ({ setShowAdmin }) => {
 
             <button
               type="button"
-              onClick={() => setShowAdmin(false)}
+              onClick={() => navigate("/")}
               className="bg-gray-300 text-gray-700 px-5 py-2 rounded-md hover:bg-gray-400">
               Cancel
             </button>

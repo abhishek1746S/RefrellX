@@ -1,14 +1,9 @@
 import React, { useState } from "react";
-<<<<<<< HEAD
 import { useNavigate } from "react-router-dom";
-=======
-
->>>>>>> 96b1a3551045d0d62ae0f57978884a87fad8df38
 const LoginPage = ({ setLogin,  setShowRegister, showRegister, setShowStudent,  setShowEmployee,}) => {
   
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-<<<<<<< HEAD
   const navigate = useNavigate();
   const handleLogin = (e) => {
   e.preventDefault();
@@ -23,22 +18,6 @@ const LoginPage = ({ setLogin,  setShowRegister, showRegister, setShowStudent,  
     alert("Invalid Email or Password");
   }
 };
-=======
-
-  const handleLogin = (e) => {
-    e.preventDefault();
-
-    if (
-      email === "student@gmail.com" &&
-      password === "123456"
-    ) {
-      alert("login success")
-      setLogin(false);
-    } else {
-      alert("Invalid Email or Password");
-    }
-  };
->>>>>>> 96b1a3551045d0d62ae0f57978884a87fad8df38
 
   return (
     <>

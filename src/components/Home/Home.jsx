@@ -3,13 +3,11 @@ import "../Home/Home.css";
 import { useState } from "react";
 import StudentRegistration from "../Login&Registration/StudentRegistration.jsx";
 import EmployeeRegistration from "../Login&Registration/EmployeeRegistration.jsx";
-import AdminLogin from "../Login&Registration/AdminLogin.jsx";
 import LoginPage from "../Login&Registration/LoginPage.jsx";
 const Home = () => {
   const [Login, setLogin] = useState(false);
   const [showStudent, setShowStudent] = useState(false);
   const [showEmployee, setShowEmployee] = useState(false);
-  const [showAdmin, setShowAdmin] = useState(false);
   const [showRegister, setShowRegister] = useState(false);
   return (
     <div>
@@ -52,20 +50,7 @@ const Home = () => {
             I'm an Employee
           </button>
         </div>
-        <div className="card card-degin">
-          <span
-            className="material-symbols-outlined mt-5"
-            style={{ fontSize: "48px" }}>
-            admin_panel_settings
-          </span>
-          <span>Admin</span>
-          <p className="text-sm text-center">Manage platform and users</p>
-          <button
-            className="bg-fuchsia-500 text-white py-2 px-4 rounded-md hover:bg-fuchsia-600"
-            onClick={() => setShowAdmin(true)}>
-            I'm an Admin
-          </button>
-        </div>
+        
       </div>
       <p className="text-xl font-semibold text-center mt-20">
         Already have an account?{" "}
@@ -88,7 +73,7 @@ const Home = () => {
         <EmployeeRegistration setShowEmployee={setShowEmployee} />
       )}
 
-      {showAdmin && <AdminLogin setShowAdmin={setShowAdmin} />}
+      
       {(Login || showRegister) && (
   <LoginPage
     setLogin={setLogin}
